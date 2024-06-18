@@ -1,0 +1,28 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario{
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    label{
+        flex: 0 0 10rem;
+    }
+    input{
+        flex: 1; // Esto hace que crezca o se reduzca para llenar el espacio disponible en el contenedor flex
+        border: none;
+        padding: calc(v.$separacion / 4); // La función calc() permite realizar cálculos matemáticos para determinar valores de propiedades CSS. Es útil para establecer valores que dependen de múltiples factores o variables
+        border-radius: 1rem;
+
+        &:disabled{
+            background-color: lighten(v.$negro, 30%);
+            color: v.$blanco;
+            cursor: not-allowed;
+        }
+    }
+}
